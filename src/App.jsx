@@ -106,11 +106,11 @@ function App() {
   if (screen === "start") {
     return (
       <div id="app">
-        <h1 style={{ marginTop: 0 }}>Word 500</h1>
+        <h1 style={{ marginTop: 0 }}>워드마스터</h1>
         <p style={{ color: "#666", lineHeight: "1.5" }}>
           2,000단어 중 500문제가 출제됩니다.
           <br />
-          <b>한 문제당 제한시간 2초!</b>
+          <b>한 문제당 제한시간 5초!</b>
         </p>
         <button className="main-btn" onClick={startQuiz}>
           테스트 시작
