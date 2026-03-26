@@ -1,0 +1,157 @@
+:root {
+  --primary: #1a73e8;
+  --correct: #28a745;
+  --wrong: #dc3545;
+  --timeout: #ffc107;
+  --bg: #f0f2f5;
+}
+
+* {
+  box-sizing: border-box; /* 패딩이 너비에 영향을 주지 않도록 설정 */
+  -webkit-tap-highlight-color: transparent; /* 모바일 클릭 시 파란 박스 제거 */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden; /* 가로 스크롤 절대 방지 */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 상단부터 배치 */
+  background-color: var(--bg);
+}
+
+#app {
+  background: white;
+  width: 95%; /* 양옆에 아주 약간의 여유만 둠 */
+  max-width: 450px;
+  min-height: 90vh; /* 화면 높이에 맞춤 */
+  margin: 10px auto;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+#timer-container {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  margin: 15px 0;
+  overflow: hidden;
+}
+#timer-bar {
+  height: 100%;
+  background: var(--wrong);
+}
+
+.word-display {
+  font-size: 38px;
+  font-weight: 800;
+  margin: 20px 0;
+  color: var(--primary);
+  word-break: break-all;
+}
+.options-grid {
+  display: grid;
+  gap: 10px;
+}
+.option-btn {
+  padding: 16px;
+  font-size: 17px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  cursor: pointer;
+  background: white;
+  font-weight: 500;
+}
+
+.correct {
+  background-color: #e6ffed !important;
+  border-color: var(--correct) !important;
+  color: #155724;
+}
+.wrong {
+  background-color: #fff5f5 !important;
+  border-color: var(--wrong) !important;
+  color: #721c24;
+}
+.timeout {
+  background-color: #fff3cd !important;
+  border-color: var(--timeout) !important;
+  color: #856404;
+}
+
+.stats {
+  margin-bottom: 5px;
+  color: #666;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-container {
+  flex: 1;
+  max-height: 65vh; /* 폰 화면에서 결과 리스트가 너무 길어지지 않게 */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
+}
+.result-card {
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  border-left: 6px solid #ddd;
+}
+.res-correct-card {
+  border-left-color: var(--correct);
+  background-color: #f8fff9;
+}
+.res-wrong-card {
+  border-left-color: var(--wrong);
+  background-color: #fffafb;
+}
+
+.card-num {
+  font-size: 11px;
+  color: #aaa;
+}
+.card-eng {
+  font-size: 19px;
+  font-weight: bold;
+  color: var(--primary);
+}
+.card-kor {
+  font-size: 15px;
+  color: #444;
+  white-space: pre-wrap;
+}
+
+.main-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 18px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 100%;
+}
+.dev-btn {
+  background: #f0f0f0;
+  color: #999;
+  border: none;
+  padding: 4px 8px;
+  font-size: 10px;
+  border-radius: 4px;
+}
